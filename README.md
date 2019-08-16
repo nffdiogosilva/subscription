@@ -2,27 +2,34 @@
 
 A simple subscription system, wrote entirely with Python 3, with no framework support whatsoever.
 
+## To run project (with docker):
+
+#### Dependencies needeed: docker
+
+    $ git clone <repo_url>
+    $ cd <project_dir>
+    $ docker image build -t subscription-test .
+    
+    # By default, this docker container run command will run the tests via pytest
+    $ docker container run --rm -it subscription-test
+
 ## To run project (with local computer):
+
+#### Dependencies needeed: python 3 and pipenv.
+
+    $ git clone <repo_url>
     $ cd <project_dir>
     $ pipenv install
     $ pipenv shell
-    $ pytest # to make the tests run
 
-#### Dependencies needeed: You need python 3 and pipenv.
+    # To make the tests run
+    $ pytest
 
 After running the pytest, the htmlcov (with the code coverage), will appear.
 In this case, this folder is already included in the repository, with the latest results.
 Please consult the file htmlcov/index.html to see the code coverage detailed.
 
-## To run project (with docker):
-    $ cd <project_dir>
-    $ docker image build -t subscription-test .
-    $ docker container run --rm -it subscription-test
-    $ pytest # to make the tests run
-
-#### Dependencies needeed: docker
-
-MIT License
+# MIT License
 
 Copyright (c) [2019] [Nuno Diogo da Silva diogosilva.nuno@gmail.com]
 
