@@ -1,0 +1,10 @@
+.git/*
+.gitignore
+
+.pytest_cache
+.coverage
+htmlcov/*
+
+.vscode
+
+README.md
