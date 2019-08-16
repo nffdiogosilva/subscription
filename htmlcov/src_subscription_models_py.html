@@ -194,33 +194,30 @@
 <p id="n125" class="stm run hide_run"><a href="#n125">125</a></p>
 <p id="n126" class="pln"><a href="#n126">126</a></p>
 <p id="n127" class="pln"><a href="#n127">127</a></p>
-<p id="n128" class="pln"><a href="#n128">128</a></p>
+<p id="n128" class="stm run hide_run"><a href="#n128">128</a></p>
 <p id="n129" class="stm run hide_run"><a href="#n129">129</a></p>
 <p id="n130" class="stm run hide_run"><a href="#n130">130</a></p>
-<p id="n131" class="stm run hide_run"><a href="#n131">131</a></p>
-<p id="n132" class="pln"><a href="#n132">132</a></p>
-<p id="n133" class="stm run hide_run"><a href="#n133">133</a></p>
-<p id="n134" class="pln"><a href="#n134">134</a></p>
-<p id="n135" class="stm run hide_run"><a href="#n135">135</a></p>
-<p id="n136" class="pln"><a href="#n136">136</a></p>
-<p id="n137" class="stm run hide_run"><a href="#n137">137</a></p>
-<p id="n138" class="pln"><a href="#n138">138</a></p>
-<p id="n139" class="stm run hide_run"><a href="#n139">139</a></p>
-<p id="n140" class="pln"><a href="#n140">140</a></p>
+<p id="n131" class="pln"><a href="#n131">131</a></p>
+<p id="n132" class="stm run hide_run"><a href="#n132">132</a></p>
+<p id="n133" class="pln"><a href="#n133">133</a></p>
+<p id="n134" class="stm run hide_run"><a href="#n134">134</a></p>
+<p id="n135" class="pln"><a href="#n135">135</a></p>
+<p id="n136" class="stm run hide_run"><a href="#n136">136</a></p>
+<p id="n137" class="pln"><a href="#n137">137</a></p>
+<p id="n138" class="stm run hide_run"><a href="#n138">138</a></p>
+<p id="n139" class="pln"><a href="#n139">139</a></p>
+<p id="n140" class="stm run hide_run"><a href="#n140">140</a></p>
 <p id="n141" class="stm run hide_run"><a href="#n141">141</a></p>
-<p id="n142" class="stm run hide_run"><a href="#n142">142</a></p>
-<p id="n143" class="pln"><a href="#n143">143</a></p>
+<p id="n142" class="pln"><a href="#n142">142</a></p>
+<p id="n143" class="stm run hide_run"><a href="#n143">143</a></p>
 <p id="n144" class="stm run hide_run"><a href="#n144">144</a></p>
-<p id="n145" class="stm run hide_run"><a href="#n145">145</a></p>
+<p id="n145" class="pln"><a href="#n145">145</a></p>
 <p id="n146" class="pln"><a href="#n146">146</a></p>
 <p id="n147" class="pln"><a href="#n147">147</a></p>
-<p id="n148" class="pln"><a href="#n148">148</a></p>
+<p id="n148" class="stm run hide_run"><a href="#n148">148</a></p>
 <p id="n149" class="pln"><a href="#n149">149</a></p>
-<p id="n150" class="pln"><a href="#n150">150</a></p>
-<p id="n151" class="stm run hide_run"><a href="#n151">151</a></p>
-<p id="n152" class="pln"><a href="#n152">152</a></p>
-<p id="n153" class="stm run hide_run"><a href="#n153">153</a></p>
-<p id="n154" class="stm mis"><a href="#n154">154</a></p>
+<p id="n150" class="stm run hide_run"><a href="#n150">150</a></p>
+<p id="n151" class="stm mis"><a href="#n151">151</a></p>
 
             </td>
             <td class="text">
@@ -324,10 +321,10 @@
 <p id="t98" class="pln">    <span class="key">def</span> <span class="nam">plan_type</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">plan_type</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t99" class="stm run hide_run">        <span class="key">if</span> <span class="key">not</span> <span class="nam">plan_type</span> <span class="key">in</span> <span class="nam">self</span><span class="op">.</span><span class="nam">PLAN_TYPE_CHOICES</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t100" class="stm run hide_run">            <span class="key">raise</span> <span class="nam">ValueError</span><span class="op">(</span><span class="strut">&nbsp;</span></p>
-<p id="t101" class="pln">                    <span class="str">'The plan type has to be one of these values: {}. Plan inserted: {}'</span><span class="op">.</span><span class="nam">format</span><span class="op">(</span><span class="strut">&nbsp;</span></p>
-<p id="t102" class="pln">                        <span class="str">''</span><span class="op">.</span><span class="nam">join</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">PLAN_TYPE_CHOICES</span><span class="op">)</span><span class="op">,</span> <span class="nam">plan_type</span><span class="strut">&nbsp;</span></p>
-<p id="t103" class="pln">                    <span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t104" class="pln">                <span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t101" class="pln">                <span class="str">'The plan type has to be one of these values: {}. Plan inserted: {}'</span><span class="op">.</span><span class="nam">format</span><span class="op">(</span><span class="strut">&nbsp;</span></p>
+<p id="t102" class="pln">                    <span class="str">''</span><span class="op">.</span><span class="nam">join</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">PLAN_TYPE_CHOICES</span><span class="op">)</span><span class="op">,</span> <span class="nam">plan_type</span><span class="strut">&nbsp;</span></p>
+<p id="t103" class="pln">                <span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t104" class="pln">            <span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t105" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t106" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">_plan_type</span> <span class="op">=</span> <span class="nam">plan_type</span><span class="strut">&nbsp;</span></p>
 <p id="t107" class="pln"><span class="strut">&nbsp;</span></p>
@@ -351,33 +348,30 @@
 <p id="t125" class="stm run hide_run"><span class="key">class</span> <span class="nam">Website</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t126" class="pln">    <span class="str">"""A Website object with an url and customer attributes"""</span><span class="strut">&nbsp;</span></p>
 <p id="t127" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t128" class="pln">    <span class="com"># TODO: test again how I should add the *args and **kwargs</span><span class="strut">&nbsp;</span></p>
-<p id="t129" class="stm run hide_run">    <span class="key">def</span> <span class="nam">__init__</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">url</span><span class="op">,</span> <span class="nam">customer</span><span class="op">=</span><span class="key">None</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t130" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">url</span> <span class="op">=</span> <span class="nam">url</span><span class="strut">&nbsp;</span></p>
-<p id="t131" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">customer</span> <span class="op">=</span> <span class="nam">customer</span><span class="strut">&nbsp;</span></p>
-<p id="t132" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t133" class="stm run hide_run">    <span class="op">@</span><span class="nam">property</span><span class="strut">&nbsp;</span></p>
-<p id="t134" class="pln">    <span class="key">def</span> <span class="nam">customer</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t135" class="stm run hide_run">        <span class="key">return</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_customer</span><span class="strut">&nbsp;</span></p>
-<p id="t136" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t137" class="stm run hide_run">    <span class="op">@</span><span class="nam">customer</span><span class="op">.</span><span class="nam">setter</span><span class="strut">&nbsp;</span></p>
-<p id="t138" class="pln">    <span class="key">def</span> <span class="nam">customer</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">customer</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t139" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">_customer</span> <span class="op">=</span> <span class="nam">customer</span><span class="strut">&nbsp;</span></p>
-<p id="t140" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t141" class="stm run hide_run">        <span class="key">if</span> <span class="key">not</span> <span class="nam">customer</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t142" class="stm run hide_run">            <span class="key">return</span><span class="strut">&nbsp;</span></p>
-<p id="t143" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t144" class="stm run hide_run">        <span class="key">if</span> <span class="key">not</span> <span class="nam">customer</span><span class="op">.</span><span class="nam">can_add_website</span><span class="op">(</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t145" class="stm run hide_run">            <span class="key">raise</span> <span class="nam">CustomerAddWebsitePermissionDenied</span><span class="op">(</span><span class="strut">&nbsp;</span></p>
-<p id="t146" class="pln">                <span class="str">'Customer can\'t have more websites. Total allowed: {}'</span><span class="op">.</span><span class="nam">format</span><span class="op">(</span><span class="strut">&nbsp;</span></p>
-<p id="t147" class="pln">                    <span class="nam">customer</span><span class="op">.</span><span class="nam">get_total_websites_allowed</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t148" class="pln">                <span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t149" class="pln">            <span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t150" class="pln">        <span class="key">else</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t151" class="stm run hide_run">            <span class="nam">customer</span><span class="op">.</span><span class="nam">websites</span><span class="op">.</span><span class="nam">add</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t152" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t153" class="stm run hide_run">    <span class="key">def</span> <span class="nam">__str__</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t154" class="stm mis">        <span class="key">return</span> <span class="str">'Website: {}'</span><span class="op">.</span><span class="nam">format</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">url</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t128" class="stm run hide_run">    <span class="key">def</span> <span class="nam">__init__</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">url</span><span class="op">,</span> <span class="nam">customer</span><span class="op">=</span><span class="key">None</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t129" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">url</span> <span class="op">=</span> <span class="nam">url</span><span class="strut">&nbsp;</span></p>
+<p id="t130" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">customer</span> <span class="op">=</span> <span class="nam">customer</span><span class="strut">&nbsp;</span></p>
+<p id="t131" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t132" class="stm run hide_run">    <span class="op">@</span><span class="nam">property</span><span class="strut">&nbsp;</span></p>
+<p id="t133" class="pln">    <span class="key">def</span> <span class="nam">customer</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t134" class="stm run hide_run">        <span class="key">return</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_customer</span><span class="strut">&nbsp;</span></p>
+<p id="t135" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t136" class="stm run hide_run">    <span class="op">@</span><span class="nam">customer</span><span class="op">.</span><span class="nam">setter</span><span class="strut">&nbsp;</span></p>
+<p id="t137" class="pln">    <span class="key">def</span> <span class="nam">customer</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">customer</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t138" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">_customer</span> <span class="op">=</span> <span class="nam">customer</span><span class="strut">&nbsp;</span></p>
+<p id="t139" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t140" class="stm run hide_run">        <span class="key">if</span> <span class="key">not</span> <span class="nam">customer</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t141" class="stm run hide_run">            <span class="key">return</span><span class="strut">&nbsp;</span></p>
+<p id="t142" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t143" class="stm run hide_run">        <span class="key">if</span> <span class="key">not</span> <span class="nam">customer</span><span class="op">.</span><span class="nam">can_add_website</span><span class="op">(</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t144" class="stm run hide_run">            <span class="key">raise</span> <span class="nam">CustomerAddWebsitePermissionDenied</span><span class="op">(</span><span class="strut">&nbsp;</span></p>
+<p id="t145" class="pln">                <span class="str">'Customer can\'t have more websites. Total allowed: {}'</span><span class="op">.</span><span class="nam">format</span><span class="op">(</span><span class="nam">customer</span><span class="op">.</span><span class="nam">get_total_websites_allowed</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t146" class="pln">            <span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t147" class="pln">        <span class="key">else</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t148" class="stm run hide_run">            <span class="nam">customer</span><span class="op">.</span><span class="nam">websites</span><span class="op">.</span><span class="nam">add</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t149" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t150" class="stm run hide_run">    <span class="key">def</span> <span class="nam">__str__</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t151" class="stm mis">        <span class="key">return</span> <span class="str">'Website: {}'</span><span class="op">.</span><span class="nam">format</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">url</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 
             </td>
         </tr>
@@ -388,7 +382,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.4</a>,
-            created at 2019-08-16 17:07
+            created at 2019-08-16 18:04
         </p>
     </div>
 </div>

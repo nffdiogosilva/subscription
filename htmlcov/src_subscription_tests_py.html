@@ -489,7 +489,7 @@
 <p id="t206" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t207" class="stm run hide_run">        <span class="key">with</span> <span class="nam">self</span><span class="op">.</span><span class="nam">assertRaises</span><span class="op">(</span><span class="nam">CustomerAddWebsitePermissionDenied</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t208" class="stm run hide_run">            <span class="nam">website</span> <span class="op">=</span> <span class="nam">Website</span><span class="op">(</span><span class="str">'https://example.com'</span><span class="op">,</span> <span class="nam">self</span><span class="op">.</span><span class="nam">invalid_customer</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t209" class="stm mis">            <span class="nam">self</span><span class="op">.</span><span class="nam">assertNone</span><span class="op">(</span><span class="nam">website</span><span class="op">.</span><span class="nam">customer</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t209" class="stm mis">            <span class="nam">self</span><span class="op">.</span><span class="nam">assertIsNone</span><span class="op">(</span><span class="nam">website</span><span class="op">.</span><span class="nam">customer</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t210" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t211" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertEqual</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">invalid_customer</span><span class="op">.</span><span class="nam">websites</span><span class="op">.</span><span class="nam">count</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="num">1</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 
@@ -502,7 +502,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.4</a>,
-            created at 2019-08-16 17:07
+            created at 2019-08-16 18:04
         </p>
     </div>
 </div>
