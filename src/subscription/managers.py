@@ -19,15 +19,11 @@ class WebsiteManager:
 
     def add(self, *args):
         for arg in args:
-            if self.customer.can_add_website():
-                self.queryset.append(arg)
+            if not arg.customer:
+                # This attribute (customer) set, if valid, will invoke again this .add method
                 arg.customer = self.customer
             else:
-                raise CustomerAddWebsitePermissionDenied(
-                    'Customer can\'t have more websites. Total allowed: {}'.format(
-                        self.customer.get_total_websites_allowed()
-                    )
-                )
+                self.queryset.append(arg)
 
     def update(self, obj, **kwargs):
         for attr_name, value in kwargs.items():
@@ -35,8 +31,8 @@ class WebsiteManager:
 
     def remove(self, obj):
         try:
-            self.queryset.remove(obj)
             obj.customer = None
+            self.queryset.remove(obj)
         except ValueError:
             raise ObjectDoesNotExist('Website doesn\'t exist on the Customer websites list')
 

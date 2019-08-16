@@ -20,11 +20,19 @@ class CustomerTestCase(TestCase):
         self.assertIsNone(self.customer.subscription)
 
         subscribed_plan = self.customer.subscribe_plan(self.default_plan)
-        # Assert that the created plan is the same as the subscribed plan
-        self.assertEqual(self.default_plan, subscribed_plan)
 
         # Assert that the subscribed plan is the same as the plan associated with the customer
         self.assertEqual(self.customer.subscription, subscribed_plan)
+
+    def test_customer_can_not_subscribe_plan(self):
+        """Tests that a user can not subscribe to a plan if he already subscribed before"""
+        
+        subscribed_plan = self.customer.subscribe_plan(self.default_plan)
+        # Assert that the user has subscribed to a plan
+        self.assertEqual(self.customer.subscription, subscribed_plan)
+
+        with self.assertRaises(ValueError):
+            self.customer.subscribe_plan(self.new_plan)
 
     def test_customer_can_change_plan(self):
         """Test a customer is eligible to change between plans"""
@@ -45,7 +53,7 @@ class CustomerTestCase(TestCase):
         self.assertTrue(self.customer.change_plan(self.new_plan))
         self.assertEqual(self.customer.subscription, self.new_plan)
 
-    #def test_customer_renewal_date_updates_when_plan_updates(self):
+    # def test_customer_renewal_date_updates_when_plan_updates(self):
     #    pass
 
     def test_customer_renewal_date_has_one_year_time_value(self):
@@ -70,16 +78,12 @@ class CustomerTestCase(TestCase):
                 self.assertEqual(self.customer.sub_renewal_date, expected_renewal_date)
 
                 # reset customer subscription and subscription renewal_date for next test
-                self.customer.remove_subscription()
-
-    # TODO: test what happens when the renewal date is surpassed (the subscription should be canceled)
+                self.customer.subscription = None
 
     def test_customer_website_crud_operations(self):
         """Test Website object crud operations, made by Customer object"""
         customer_with_plan = Customer('foo', 'bar', 'foo@bar.com', Plan('Single', 49.0, 'single'))
-        # import pdb ; pdb.set_trace()
         website = Website('https://example.com')
-        #website = mixer.blend(Website, customer=None)
 
         # Adding operation
         customer_with_plan.websites.add(website)
@@ -98,35 +102,47 @@ class CustomerTestCase(TestCase):
         self.assertFalse(website in customer_with_plan.websites.all())
         self.assertIsNone(website.customer)
 
+    def test_customer_can_not_add_website_if_no_subscription(self):
+        # self.customer = Customer('foo', 'bar', 'foo@bar.com')
+        self.assertIsNone(self.customer.subscription)
+
+        with self.assertRaises(ValueError):
+            self.customer.websites.add(Website('https://foo.bar'))
+
 
 class PlanTestCase(TestCase):
     def setUp(self):
-       self.customer = Customer('foo', 'bar', 'foo@bar.com')
-    
-       self.single_plan = Plan('Single', 49.0, 'single')
-       self.plus_plan = Plan('Plus', 99.0, 'plus')
-       self.infinite_plan = Plan('Infinite', 249.0, 'infinite')
+        self.customer = Customer('foo', 'bar', 'foo@bar.com')
 
-       self.website1 = Website('https://foo.bar', customer=None)
-       self.website2 = Website('https://foobar.bar', customer=None)
-       self.website3 = Website('https://bar.foo', customer=None)
-       self.website4 = Website('https://bar.foo', customer=None)
+        self.single_plan = Plan('Single', 49.0, 'single', total_websites_allowed=1)
+        self.plus_plan = Plan('Plus', 99.0, 'plus', total_websites_allowed=3)
+        self.infinite_plan = Plan('Infinite', 249.0, 'infinite')
+
+        self.website1 = Website('https://foo.bar', customer=None)
+        self.website2 = Website('https://foobar.bar', customer=None)
+        self.website3 = Website('https://bar.foo', customer=None)
+        self.website4 = Website('https://bar.foo', customer=None)
 
     def test_total_allowed_based_on_plan(self):
         """Test that the total websites allowed attribute is always based on the plan type, by default"""
         self.assertEqual(self.single_plan.total_websites_allowed, 1)
         self.assertEqual(self.plus_plan.total_websites_allowed, 3)
-        self.assertEqual(self.infinite_plan.total_websites_allowed, 0)
 
-    # TODO: test also that the plan type is only one of those three (or create a Plan_type Model, this way you can add different plans in the future)
+    def test_plan_type_value(self):
+        """Test that NO plan, with plan type different than 'single', 'plus' and 'infinite', can be initialized"""
+        with self.assertRaises(ValueError):
+            Plan('Plan1', 99.0, plan_type='foo')
+            Plan('Plan1', 99.0, plan_type='bar')
+            Plan('Plan1', 99.0, plan_type='foobar')
+
     def test_plan_type_single_allow_only_one_website(self):
         """Test that the plan with type single can only have one website"""
         self.customer.subscribe_plan(self.single_plan)
-        
+
         # Allows adding one website, with no issue.
         self.customer.websites.add(self.website1)
         self.assertEqual(self.customer.websites.count(), 1)
-        
+
         # The 2nd one is expected to raise an Exception
         with self.assertRaises(CustomerAddWebsitePermissionDenied):
             self.customer.websites.add(self.website2)
@@ -134,11 +150,11 @@ class PlanTestCase(TestCase):
     def test_plan_type_plus_allow_3_websites(self):
         """Test that the plan with type plus can only have max 3 websites"""
         self.customer.subscribe_plan(self.plus_plan)
-        
+
         # Allows adding, with no issue, 3 websites.
         self.customer.websites.add(self.website1, self.website2, self.website3)
         self.assertEqual(self.customer.websites.count(), 3)
-        
+
         # The 4th one is expected to raise an Exception
         with self.assertRaises(CustomerAddWebsitePermissionDenied):
             self.customer.websites.add(self.website4)
@@ -148,12 +164,40 @@ class PlanTestCase(TestCase):
 
         self.customer.subscribe_plan(self.infinite_plan)
         # Can change this value to tests if you can add even more websites
-        TOTAL_WEBSITES = 100000 # it stresses with one million objects....An iterator would be better
+        TOTAL_WEBSITES = 100000  # it stresses with one million objects....An iterator would be better
         websites_to_test = []
         for i in range(0, TOTAL_WEBSITES):
-            # TODO: TEST that if a customer is initialized on the website site constructor, than it needs to check the customer relantionship
             websites_to_test.append(Website('https://foo{}.bar'.format(i), customer=None))
-        
-        # Adding 100 websites, with no issue.
+
         self.customer.websites.add(*websites_to_test)
         self.assertEqual(self.customer.websites.count(), TOTAL_WEBSITES)
+
+
+class WebsiteTestCase(TestCase):
+    def setUp(self):
+        # Valid customer with no websites associated with.
+        self.valid_customer = Customer('foo', 'bar', 'foo@bar.com', Plan('TestPlan', 0, plan_type='single'))
+
+        # Invalid customer because already has a website associated with it one and a plan type 'single',
+        # He's not supposed to have more than 1 website
+        self.invalid_customer = Customer('bar', 'foo', 'barfoo@.com', Plan('TestPlan', 0, plan_type='single'))
+        self.invalid_customer.websites.add(Website('https://foo.bar'))
+
+    def test_website_can_initialize_valid_customer(self):
+        """Test that an association is created on both objects, when a Website object is initialized"""
+        self.assertEqual(self.valid_customer.websites.count(), 0)
+        website = Website('https://bar.foo', self.valid_customer)
+
+        self.assertEqual(self.valid_customer.websites.count(), 1)
+        self.assertEqual(website.customer, self.valid_customer)
+
+    def test_website_does_not_initialize_with_invalid_customer(self):
+        """Tests that no more relation can be created between Customer and Website, if Customer doesn't have permissions to add more websites"""
+
+        self.assertEqual(self.invalid_customer.websites.count(), 1)
+
+        with self.assertRaises(CustomerAddWebsitePermissionDenied):
+            website = Website('https://example.com', self.invalid_customer)
+            self.assertNone(website.customer)
+
+        self.assertEqual(self.invalid_customer.websites.count(), 1)
