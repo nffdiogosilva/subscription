@@ -12,6 +12,7 @@ A simple subscription system, wrote entirely with Python 3, with no framework su
 
 After running the pytest, the htmlcov (with the code coverage), will appear.
 In this case, this folder is already included in the repository, with the latest results.
+Please consult the file htmlcov/index.html to see the code coverage detailed.
 
 ## To run project (with docker):
     $ cd <project_dir>
