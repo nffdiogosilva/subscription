@@ -53,9 +53,6 @@ class CustomerTestCase(TestCase):
         self.assertTrue(self.customer.change_plan(self.new_plan))
         self.assertEqual(self.customer.subscription, self.new_plan)
 
-    # def test_customer_renewal_date_updates_when_plan_updates(self):
-    #    pass
-
     def test_customer_renewal_date_has_one_year_time_value(self):
         """Test that the subscription renewal date has a one year timestamp"""
 
@@ -134,6 +131,17 @@ class PlanTestCase(TestCase):
             Plan('Plan1', 99.0, plan_type='foo')
             Plan('Plan1', 99.0, plan_type='bar')
             Plan('Plan1', 99.0, plan_type='foobar')
+
+    def test_plan_total_websites_allowed_value(self):
+        """Test that total_websites_allowed property obey by the plan_type rules"""
+
+        with self.assertRaises(ValueError):
+            # Assert that, if a plan_type is 'single', the total_websites_allowed cannot be superior than 1.
+            Plan('Plan1', 0, 'single', total_websites_allowed=2)
+
+        with self.assertRaises(ValueError):
+            # Assert that, if a plan_type is 'plus', the total_websites_allowed cannot be superior than 3.
+            Plan('Plan2', 0, 'plus', total_websites_allowed=4)
 
     def test_plan_type_single_allow_only_one_website(self):
         """Test that the plan with type single can only have one website"""

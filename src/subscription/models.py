@@ -88,7 +88,7 @@ class Plan:
         self.name = name
         self.price = Decimal(price)
         self.plan_type = plan_type
-        self._total_websites_allowed = total_websites_allowed
+        self.total_websites_allowed = total_websites_allowed
 
     @property
     def plan_type(self):
