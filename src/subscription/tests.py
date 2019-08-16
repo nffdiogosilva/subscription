@@ -26,7 +26,7 @@ class CustomerTestCase(TestCase):
 
     def test_customer_can_not_subscribe_plan(self):
         """Tests that a user can not subscribe to a plan if he already subscribed before"""
-        
+
         subscribed_plan = self.customer.subscribe_plan(self.default_plan)
         # Assert that the user has subscribed to a plan
         self.assertEqual(self.customer.subscription, subscribed_plan)
@@ -206,6 +206,6 @@ class WebsiteTestCase(TestCase):
 
         with self.assertRaises(CustomerAddWebsitePermissionDenied):
             website = Website('https://example.com', self.invalid_customer)
-            self.assertNone(website.customer)
+            self.assertIsNone(website.customer)
 
         self.assertEqual(self.invalid_customer.websites.count(), 1)

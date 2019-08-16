@@ -14,10 +14,10 @@ class Customer:
         self.name = name
         self.password = password
         self.email = email
-        
+
         self.subscription_date = None
         self.subscription = subscription
-        
+
         self.websites = websites or WebsiteManager(self)
 
     def __str__(self):
@@ -93,15 +93,15 @@ class Plan:
     @property
     def plan_type(self):
         return self._plan_type
-    
+
     @plan_type.setter
     def plan_type(self, plan_type):
         if not plan_type in self.PLAN_TYPE_CHOICES:
             raise ValueError(
-                    'The plan type has to be one of these values: {}. Plan inserted: {}'.format(
-                        ''.join(self.PLAN_TYPE_CHOICES), plan_type
-                    )
+                'The plan type has to be one of these values: {}. Plan inserted: {}'.format(
+                    ''.join(self.PLAN_TYPE_CHOICES), plan_type
                 )
+            )
 
         self._plan_type = plan_type
 
@@ -125,7 +125,6 @@ class Plan:
 class Website:
     """A Website object with an url and customer attributes"""
 
-    # TODO: test again how I should add the *args and **kwargs
     def __init__(self, url, customer=None):
         self.url = url
         self.customer = customer
@@ -143,9 +142,7 @@ class Website:
 
         if not customer.can_add_website():
             raise CustomerAddWebsitePermissionDenied(
-                'Customer can\'t have more websites. Total allowed: {}'.format(
-                    customer.get_total_websites_allowed()
-                )
+                'Customer can\'t have more websites. Total allowed: {}'.format(customer.get_total_websites_allowed())
             )
         else:
             customer.websites.add(self)

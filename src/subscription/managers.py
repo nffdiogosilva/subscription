@@ -20,7 +20,6 @@ class WebsiteManager:
     def add(self, *args):
         for arg in args:
             if not arg.customer:
-                # This attribute (customer) set, if valid, will invoke again this .add method
                 arg.customer = self.customer
             else:
                 self.queryset.append(arg)

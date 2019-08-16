@@ -1,5 +1,6 @@
 import datetime
 
+
 def get_year_total_days(year=None):
     """Util function that calculates the total days a year have."""
 
@@ -11,4 +12,4 @@ def get_year_total_days(year=None):
 
     # needs to add one more day so we get 365/366 results
     return (last_day_year - first_day_year).days + 1
- 
+
