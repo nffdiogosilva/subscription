@@ -99,7 +99,7 @@ class Plan:
         if not plan_type in self.PLAN_TYPE_CHOICES:
             raise ValueError(
                 'The plan type has to be one of these values: {}. Plan inserted: {}'.format(
-                    ''.join(self.PLAN_TYPE_CHOICES), plan_type
+                    ', '.join(self.PLAN_TYPE_CHOICES), plan_type
                 )
             )
 
