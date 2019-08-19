@@ -4,7 +4,7 @@ A simple subscription system, wrote entirely with Python 3, with no framework su
 
 ## To run project (with docker):
 
-#### Dependencies needeed: docker
+#### Dependencies needed: docker
 
     $ git clone <repo_url>
     $ cd <project_dir>
@@ -15,7 +15,7 @@ A simple subscription system, wrote entirely with Python 3, with no framework su
 
 ## To run project (with local computer):
 
-#### Dependencies needeed: python 3 and pipenv.
+#### Dependencies needed: python 3 and pipenv.
 
     $ git clone <repo_url>
     $ cd <project_dir>
