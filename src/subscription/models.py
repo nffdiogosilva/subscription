@@ -8,9 +8,16 @@ from .managers import WebsiteManager
 
 
 class Customer:
-    """A Customer object that can have a subscription and handle websites."""
+    """A Customer class that can have a subscription (Plan object), and manage Website instances."""
 
     def __init__(self, name, password, email, subscription=None, websites=None):
+        """
+        :param name: Customer's name
+        :param password: Customer's password
+        :param email: Customer's email
+        :param subscription=None: Customer's subscription (a Plan object)
+        :param websites=None: Customer Websites Manager. Defaults to WebsiteManager object.
+        """
         self.name = name
         self.password = password
         self.email = email
@@ -46,7 +53,7 @@ class Customer:
         return renewal_date
 
     def can_add_website(self):
-        """This method checks if user is allowed to add another website to his list, if """
+        """This method checks if user is allowed to add another website to his list or not."""
         if not self.subscription:
             raise ValueError('Customer Subscription doesn\'t exist')
 
@@ -59,7 +66,7 @@ class Customer:
             return self.subscription.total_websites_allowed
 
     def subscribe_plan(self, plan):
-        """Method responsible of associating a plan to a customer object."""
+        """Method responsible of setting a plan to a customer object subscription property."""
         if self.subscription:
             raise ValueError('User already subscribed to a plan ({})'.format(self.subscription))
 
@@ -81,10 +88,17 @@ class Customer:
 class Plan:
     """A Plan object that based on the type defines how many websites a customer can manage."""
 
-    # Initialized a tuple, an Immutable object, to make sure that the plan types can't changed from these 3
+    # Initialized a tuple, an Immutable object, 
+    # to make sure that the plan types can't changed besides these three ('single', 'plus', 'infinite')
     PLAN_TYPE_CHOICES = ('single', 'plus', 'infinite')
 
     def __init__(self, name, price, plan_type='single', total_websites_allowed=1):
+        """
+        :param name: Plan's name
+        :param price: Plan's price
+        :param plan_type='single': Plan's type
+        :param total_websites_allowed=1: Plan's property to define how many Website instances can a Customer have
+        """
         self.name = name
         self.price = Decimal(price)
         self.plan_type = plan_type
@@ -111,6 +125,7 @@ class Plan:
 
     @total_websites_allowed.setter
     def total_websites_allowed(self, total_websites_allowed):
+        """Setting total_websites_allowed while making sure then plan type rules are respected"""
         if self.plan_type == 'single' and total_websites_allowed > 1:
             raise ValueError('The plan type \'single\' only allows 1 website max')
         if self.plan_type == 'plus' and total_websites_allowed > 3:
@@ -123,9 +138,13 @@ class Plan:
 
 
 class Website:
-    """A Website object with an url and customer attributes"""
+    """A Website class with an url and customer properties"""
 
     def __init__(self, url, customer=None):
+        """
+        :param url: Website's url
+        :param customer=None: Website's Customer
+        """
         self.url = url
         self.customer = customer
 
@@ -135,6 +154,7 @@ class Website:
 
     @customer.setter
     def customer(self, customer):
+        """Setting a customer, while validanting if he's allowed to have another Website"""
         self._customer = customer
 
         if not customer:
