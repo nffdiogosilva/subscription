@@ -7,3 +7,4 @@
 # Code coverage related
 .coverage
 htmlcov/*
+.pytest_cache/*
