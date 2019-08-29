@@ -1,3 +1,9 @@
+# meta
 *.pyc
-.coverage
+
+# IDE related
 .vscode/*
+
+# Code coverage related
+.coverage
+htmlcov/*
