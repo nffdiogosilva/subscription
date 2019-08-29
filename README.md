@@ -33,7 +33,7 @@ Please consult the file htmlcov/index.html to see the code coverage detailed.
 
 ## You can use the Visual Studio Code Remote Containers feature!
 
-To run the project inside a container, with Visual Studio Code just chose the option "Re-Open folder inside container". After that you can launch the tests in the DEBUG tab.
+To run the project inside a container, with Visual Studio Code, just choose the option "Re-Open folder inside container". After that you can launch the tests in the DEBUG tab.
 
 # MIT License
 
