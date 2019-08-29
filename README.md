@@ -25,9 +25,15 @@ A simple subscription system, wrote entirely with Python 3, with no framework su
     # To make the tests run
     $ pytest
 
-After running the pytest, the htmlcov (with the code coverage), will appear.
+## Summary
+
+After running the pytest, the code coverage will be generated inside folder "htmlcov". To check results, consult the htmlconv/index.html page.
 In this case, this folder is already included in the repository, with the latest results.
 Please consult the file htmlcov/index.html to see the code coverage detailed.
+
+## You can use the Visual Studio Code Remote Containers feature!
+
+To run the project inside a container, with Visual Studio Code just chose the option "Re-Open folder inside container". After that you can launch the tests in the DEBUG tab.
 
 # MIT License
 

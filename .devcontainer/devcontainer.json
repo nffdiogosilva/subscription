@@ -1,0 +1,28 @@
+{
+	"name": "Subscription",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+	"extensions": [
+		"ms-python.python",
+		"VisualStudioExptTeam.vscodeintellicode"
+	],
+	"settings": {
+		"_workbench.uiExtensions": [ "peterjausovec.vscode-docker" ],
+		
+		/* PYTHON SETTINGS */
+		"python.pythonPath": "/usr/local/bin/python",
+		// Testing
+		"python.testing.pytestEnabled": true,
+		// Linting
+		"python.linting.pep8Enabled": false,
+    	"python.linting.pylintPath": "/root/.local/bin/pylint",
+		// Formatting
+		"python.formatting.provider": "black",
+    	"python.formatting.blackPath": "/root/.local/bin/black",
+    	"python.formatting.blackArgs": [
+    	    "-S",
+    	    "-l 120"
+		]
+	}
+}
