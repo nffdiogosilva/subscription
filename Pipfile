@@ -9,5 +9,6 @@ python_version = "3.7"
 [dev-packages]
 pytest = {version = "==5.0.1"}
 pytest-cov = "*"
+pytest-sugar = "*"
 
 [packages]
