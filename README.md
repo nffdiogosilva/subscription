@@ -1,5 +1,7 @@
 # Subscription System
 
+[![Build Status](https://travis-ci.org/nffdiogosilva/subscription.svg?branch=master)](https://travis-ci.org/nffdiogosilva/subscription)
+
 A simple subscription system, wrote entirely with Python 3, with no framework support whatsoever.
 
 ## To run project (with docker):
