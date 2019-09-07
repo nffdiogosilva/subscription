@@ -1,6 +1,7 @@
 # Subscription System
 
-[![Build Status](https://travis-ci.org/nffdiogosilva/subscription.svg?branch=master)](https://travis-ci.org/nffdiogosilva/subscription) [![Coverage Status](https://coveralls.io/repos/github/nffdiogosilva/subscription/badge.svg)](https://coveralls.io/github/nffdiogosilva/subscription)
+[![Build Status](https://travis-ci.org/nffdiogosilva/subscription.svg?branch=master)](https://travis-ci.org/nffdiogosilva/subscription) [![Coverage Status](https://coveralls.io/repos/github/nffdiogosilva/subscription/badge.svg)](https://coveralls.io/github/nffdiogosilva/subscription) [![Updates](https://pyup.io/repos/github/nffdiogosilva/subscription/shield.svg)](https://pyup.io/repos/github/nffdiogosilva/subscription/) [![Python 3](https://pyup.io/repos/github/nffdiogosilva/subscription/python-3-shield.svg)](https://pyup.io/repos/github/nffdiogosilva/subscription/)
+
 
 A simple subscription system, wrote entirely with Python 3, with no framework support whatsoever.
 
