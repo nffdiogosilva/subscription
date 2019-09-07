@@ -7,7 +7,7 @@ name = "pypi"
 python_version = "3.7"
 
 [dev-packages]
-pytest = {version = "==5.0.1"}
+pytest = {version = "*"}
 pytest-cov = "*"
 pytest-sugar = "*"
 coveralls = "*"
