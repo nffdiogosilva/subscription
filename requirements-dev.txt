@@ -10,7 +10,7 @@
 # `Pipfile.lock` and then regenerate `requirements*.txt`.
 ################################################################################
 
-coveralls
+coveralls==1.8.2
 pipenv-to-requirements
 pytest-cov
 pytest-sugar
