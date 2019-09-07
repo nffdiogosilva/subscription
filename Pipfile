@@ -11,5 +11,6 @@ pytest = {version = "==5.0.1"}
 pytest-cov = "*"
 pytest-sugar = "*"
 coveralls = "*"
+pipenv-to-requirements = "*"
 
 [packages]
