@@ -1,6 +1,6 @@
 # Subscription System
 
-[![Build Status](https://travis-ci.org/nffdiogosilva/subscription.svg?branch=master)](https://travis-ci.org/nffdiogosilva/subscription)
+[![Build Status](https://travis-ci.org/nffdiogosilva/subscription.svg?branch=master)](https://travis-ci.org/nffdiogosilva/subscription) [![Coverage Status](https://coveralls.io/repos/github/nffdiogosilva/subscription/badge.svg)](https://coveralls.io/github/nffdiogosilva/subscription)
 
 A simple subscription system, wrote entirely with Python 3, with no framework support whatsoever.
 
