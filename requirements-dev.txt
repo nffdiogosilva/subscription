@@ -14,4 +14,4 @@ coveralls
 pipenv-to-requirements
 pytest-cov
 pytest-sugar
-pytest==5.0.1
+pytest==5.1.2
