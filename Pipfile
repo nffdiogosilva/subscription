@@ -10,5 +10,6 @@ python_version = "3.7"
 pytest = {version = "==5.0.1"}
 pytest-cov = "*"
 pytest-sugar = "*"
+coveralls = "*"
 
 [packages]
