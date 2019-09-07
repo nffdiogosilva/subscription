@@ -11,7 +11,7 @@
 ################################################################################
 
 coveralls
-pipenv-to-requirements
+pipenv-to-requirements==0.8.2
 pytest-cov
 pytest-sugar
 pytest==5.0.1
