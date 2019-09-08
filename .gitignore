@@ -5,3 +5,9 @@
 .coverage
 htmlcov/*
 .pytest_cache/*
+
+# Packabe builds
+.eggs/*
+build/*
+dist/*
+*.egg-info
