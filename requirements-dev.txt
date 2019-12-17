@@ -22,7 +22,7 @@ importlib-metadata==0.20 ; python_version < '3.8'
 more-itertools==7.2.0
 packaging==19.1
 pbr==5.4.3
-pipenv-to-requirements==0.8.2
+pipenv-to-requirements==0.9.0
 pipenv==2018.11.26
 pluggy==0.12.0
 py==1.8.0
