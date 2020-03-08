@@ -35,6 +35,6 @@ six==1.12.0
 termcolor==1.1.0
 urllib3==1.25.3
 virtualenv-clone==0.5.3
-virtualenv==16.7.5
+virtualenv==20.0.9
 wcwidth==0.1.7
 zipp==0.6.0
