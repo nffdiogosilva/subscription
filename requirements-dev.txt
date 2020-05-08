@@ -1,3 +1,4 @@
+# pyup: ignore file
 ################################################################################
 # This requirements file has been automatically generated from `Pipfile` with
 # `pipenv-to-requirements`
